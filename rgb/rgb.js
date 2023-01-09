@@ -25,8 +25,8 @@ function rgb(r, g, b) {
 
   if (arguments.length === 3) {
     const hexcode = [...arguments].map(argument => {
-      if (argument > 255) return "FF";; // normalize greater than values to 255
-      if (argument < 0) return "00"; // normalize lesser than values to 0
+      if (argument > 254) return "FF";; // normalize values greater than 255
+      if (argument < 1) return "00"; // normalize values lesser than 0
 
       let result = toHex(argument);
       if (result.toString().length < 2) return `0${result}` // make the string a double length string
